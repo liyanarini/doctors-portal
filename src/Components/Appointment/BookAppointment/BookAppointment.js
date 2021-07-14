@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BookingCard from '../BookingCard/BookingCard';
 const bookingData = [
     {
@@ -49,6 +50,11 @@ const BookAppointment = ({date}) => {
     return (
         <section className="container">
             <h2 className="text-brand text-center mb-5">Available appointment on {date.toDateString()} </h2>
+            <div className="text-center">
+              <Link to="/dashboard/appointment">
+                <button className="btn-brand mb-5 p-2"> See Appointment Dashboard</button>
+              </Link>
+            </div>
             <div className="row">
                 {
                     bookingData.map(booking => <BookingCard date={date} key={booking.id} booking={booking}></BookingCard>)
